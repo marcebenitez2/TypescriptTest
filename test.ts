@@ -54,3 +54,22 @@ sayHiFromFunction(sayHi)
 function throwError(message:string):never{
     throw new Error(message)
 }
+
+//  throwError('Error') // Si descomentas esto, el codigo se rompe porque nunca termina de ejecutarse
+
+// Si queremos que una funcion pueda retornar mas de un tipo de dato, se puede usar el pipe
+
+function throwError2(message:string):string | never{
+    throw new Error(message)
+}
+
+// throwError2('Error') // Si descomentas esto, el codigo se rompe porque nunca termina de ejecutarse
+
+// Si queremos que una funcion pueda retornar mas de un tipo de dato, se puede usar el pipe
+
+function throwError3(message:string):string | number{
+    if(message === 'Error'){
+        throw new Error(message)
+    }
+    return message.length
+}
